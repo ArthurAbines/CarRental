@@ -1,0 +1,37 @@
+.bg-custom {
+    background-color: #4D5167;
+  }
+  
+  .text-white {
+    color: white;
+  }
+  
+  .btn-custom {
+    background-color: #49D06E;
+    color: white;
+    border: none;
+  }
+  
+  .btn-custom:hover {
+    background-color: #3B8C53;
+  }
+  
+  .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-control {
+    border-radius: 5px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .card-body {
+    padding: 40px;
+  }
+  .bg-custom-footer {
+      background-color: #4D5167; /* Custom background color for the footer */
+    }
