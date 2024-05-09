@@ -1,14 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
-
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import LoginForm from '@/components/LoginForm.vue';
 import RegistrationForm from '@/components/RegistrationForm.vue';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-
-
-
-
-// Add solid icons to the library
-
+import BrowseCars from '@/components/BrowseCars.vue';
 
 
 const routes = [
@@ -25,6 +19,11 @@ const routes = [
     path: '/registration',
     name: 'registration',
     component: RegistrationForm
+  },
+  {
+    path: '/browse',
+    name: 'browse',
+    component: BrowseCars
   }
 ];
 
