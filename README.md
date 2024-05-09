@@ -22,3 +22,8 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+# Create Laravel 
+```
+composer create-project --prefer-dist laravel/laravel laravel
+```
