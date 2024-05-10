@@ -253,7 +253,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.215);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -280,6 +280,13 @@ export default {
 /* Hover effect for icons */
 .col-md-3.text-center:hover img {
   transform: scale(1.1); /* Scale the icons on hover */
+}
+.col-md-3.text-center {
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.col-md-3.text-center:hover {
+  transform: scale(1.1); /* Scale the icon container on hover */
 }
 
 </style>

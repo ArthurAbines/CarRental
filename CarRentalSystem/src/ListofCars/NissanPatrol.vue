@@ -231,8 +231,13 @@ The Nissan Patrol is the brand's flagship SUV model in the Philippines. It comes
     background-color: #ffffff; /* Default row color */
   }
    /* CSS for hover effect */
-  .card:hover {
+   .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
+}
+
+.card:hover {
     transform: translateY(-5px); /* Move the card up slightly on hover */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  }
+}
+
 </style>
