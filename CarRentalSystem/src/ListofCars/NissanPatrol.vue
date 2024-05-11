@@ -25,9 +25,10 @@
           </li>
         </ul>
         <form class="d-flex ms-auto">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-success" type="submit">Search</button>
-        </form>
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-success" type="submit"><i class="fas fa-search"></i></button>
+</form>
+
       </div>
     </div>
   </nav>
@@ -37,7 +38,7 @@
   <div class="container mt-4">
     <div class="row align-items-center ">
      <div class="col">
-  <h1 class="text-center" style="color: #783D07; font-weight: bold;">NISSAN PATROL <img src="@/assets/Nissan_2020_logo.png" alt="Nissan Patrol Logo" width="50"></h1>
+  <h1 class="text-center" style="color: #000; font-weight: bold;">NISSAN PATROL <img src="@/assets/Nissan_2020_logo.png" alt="Nissan Patrol Logo" width="50"></h1>
   </div>
     </div>
   </div>
@@ -50,22 +51,56 @@
 
 
  <!-- Card of the car -->
-<div class="card card-hover" style="width: 700px; height: 430px; margin-left: -80px; background-color: #F0F0F0; border-color: #D9D9D9;">
+ <div class="card card-hover" style="position: relative; width: 700px; height: 480px; margin-left: -80px; background-color: #F0F0F0; border-color: #D9D9D9;">
   <div class="card-body">
     <img src="@/assets/NISSAN-PATROL.png" alt="Car" style="max-width: 100%; max-height: 100%; transition: transform 0.3s ease;">
     <div class="mt-3" style="color: black;">
       <p class="d-inline" style="float: left;">Pricing: 1000/day</p>
-      <button class="btn btn-custom float-end" style="background-color: #4D5167; color: white;">Rent Now</button> <!-- Added white font color -->
+      <button class="btn btn-custom float-end" style="background-color: #4D5167; color: white;" @click="showModal = true">Rent Now</button> <!-- Open modal on button click -->
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div v-if="showModal" class="modal fade show d-block" tabindex="-1" style="background: rgba(0, 0, 0, 0.5); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Select Rental Dates</h5>
+          <button type="button" class="btn-close" @click="showModal = false" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="startDate">Start Date:</label>
+            <input type="date" class="form-control" id="startDate">
+            <input type="time" class="form-control mt-2" id="startTime">
+          </div>
+          <div class="mb-3">
+            <label for="returnDate">Return Date:</label>
+            <input type="date" class="form-control" id="returnDate">
+            <input type="time" class="form-control mt-2" id="returnTime">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" @click="showModal = false">Close</button>
+          <button type="button" class="btn btn-primary" @click="confirmRental">Confirm Rental</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 </div>
 
+
+
         <!-- Nissan Patrol Overview -->
       <div class="col-lg-5 text-center mt-5"> <!-- Added margin top -->
         <h2>Nissan Patrol Overview</h2>
         <p>
-The Nissan Patrol is the brand's flagship SUV model in the Philippines. It comes with Nissan's latest iteration of the V-motion look and comes with a futuristic and modern design. </p>
+The Nissan Patrol is the brand's flagship SUV model in the Philippines. It comes with Nissan's latest iteration of the V-motion look and comes with a futuristic and modern design. 
+It comes with LED C-shaped headlights that are paired with LED daytime running lights and a new V-motion grille. 
+At the back, the SUV also comes with a redesigned tailgate that features a chrome garnish similar to that found on the Nissan Terra.
+
+</p>
       </div>
     </div>
   </div>
@@ -217,6 +252,39 @@ The Nissan Patrol is the brand's flagship SUV model in the Philippines. It comes
 </div>
 </template>
 
+
+<script>
+  export default {
+    data() {
+      return {
+        showModal: false
+      };
+    },
+    methods: {
+      confirmRental() {
+        const startDate = document.getElementById("startDate").value;
+        const startTime = document.getElementById("startTime").value;
+        const returnDate = document.getElementById("returnDate").value;
+        const returnTime = document.getElementById("returnTime").value;
+
+        // You can now use startDate, startTime, returnDate, and returnTime to process the rental confirmation
+        // For example:
+        console.log("Start Date:", startDate);
+        console.log("Start Time:", startTime);
+        console.log("Return Date:", returnDate);
+        console.log("Return Time:", returnTime);
+
+        // Close the modal after confirming rental
+        this.showModal = false;
+      }
+    }
+  };
+</script>
+
+
+
+
+
 <style>
 .btn-custom {
     background-color: #4D5167;
@@ -239,5 +307,7 @@ The Nissan Patrol is the brand's flagship SUV model in the Philippines. It comes
     transform: translateY(-5px); /* Move the card up slightly on hover */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
+
+
 
 </style>

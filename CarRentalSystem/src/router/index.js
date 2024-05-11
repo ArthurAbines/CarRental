@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+
+//views
 import BrowseCars from '../Views/BrowseCars.vue'; // Adjust the import path
 import Homepage from '../Views/Homepage.vue';
-
 
 //route for specific car page
 import NissanPatrol from '../ListofCars/NissanPatrol.vue';
@@ -34,6 +35,10 @@ const routes = [
     name: 'Homepage',
     component: Homepage
   },
+
+
+
+
 
   //route for specific car page
   {

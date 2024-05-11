@@ -25,9 +25,9 @@
           </li>
         </ul>
         <form class="d-flex ms-auto">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-success" type="submit">Search</button>
-        </form>
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-success" type="submit"><i class="fas fa-search"></i></button>
+</form>
       </div>
     </div>
   </nav>
@@ -37,7 +37,7 @@
   <div class="container mt-4">
     <div class="row align-items-center ">
      <div class="col">
-  <h1 class="text-center" style="color: #783D07; font-weight: bold;">Hyundai Elantra N<img src="@/assets/hyundai.png" alt="Logo" width="70" height="70"></h1>
+  <h1 class="text-center" style="color: #000; font-weight: bold;">Hyundai Elantra N<img src="@/assets/hyundai.png" alt="Logo" width="70" height="70"></h1>
   </div>
     </div>
   </div>
@@ -48,14 +48,42 @@
       <div class="col-lg-6">
 
  <!-- Card of the car -->
-<div class="card" style="width: 700px; height: 430px; margin-left: -80px; background-color: #F0F0F0; border-color: #D9D9D9; position: relative;">
+ <div class="card" style="width: 700px; height: 480px; margin-left: -80px; background-color: #F0F0F0; border-color: #D9D9D9; position: relative;">
   <div class="card-body" style="position: relative;">
     <img src="@/assets/elantra-n-section-spec.png" alt="Car" style="width: 100%; height: 100%; object-fit: contain;">
-    <div class="mt-3" style="color: black; position: absolute; bottom: 20px; left: 10px;"> <!-- Adjusted bottom value -->
-      <p class="d-inline" style="margin-right: 10px;">Pricing: 2000/day</p> <!-- Aligned price to the left -->
+    <div class="mt-3" style="color: black; position: absolute; bottom: 20px; left: 10px;">
+      <p class="d-inline" style="margin-right: 10px;">Pricing: 2000/day</p>
     </div>
-    <div class="mt-3" style="position: absolute; bottom: 15px; right: 10px;"> <!-- Adjusted bottom value -->
-      <button class="btn btn-custom" style="background-color: #4D5167; color: white;">Rent Now</button> <!-- Moved button to the right -->
+    <div class="mt-3" style="position: absolute; bottom: 15px; right: 10px;">
+      <button class="btn btn-custom" style="background-color: #4D5167; color: white;" @click="showModal = true">Rent Now</button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div v-if="showModal" class="modal fade show d-block" tabindex="-1" style="background: rgba(0, 0, 0, 0.5); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Select Rental Dates</h5>
+          <button type="button" class="btn-close" @click="showModal = false" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="startDate">Start Date:</label>
+            <input type="date" class="form-control" id="startDate">
+            <input type="time" class="form-control mt-2" id="startTime">
+          </div>
+          <div class="mb-3">
+            <label for="returnDate">Return Date:</label>
+            <input type="date" class="form-control" id="returnDate">
+            <input type="time" class="form-control mt-2" id="returnTime">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" @click="showModal = false">Close</button>
+          <button type="button" class="btn btn-primary" @click="confirmRental">Confirm Rental</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -222,6 +250,34 @@
   </footer>
 </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      showModal: false
+    };
+  },
+  methods: {
+    confirmRental() {
+      const startDate = document.getElementById("startDate").value;
+      const startTime = document.getElementById("startTime").value;
+      const returnDate = document.getElementById("returnDate").value;
+      const returnTime = document.getElementById("returnTime").value;
+
+      // You can now use startDate, startTime, returnDate, and returnTime to process the rental confirmation
+      // For example:
+      console.log("Start Date:", startDate);
+      console.log("Start Time:", startTime);
+      console.log("Return Date:", returnDate);
+      console.log("Return Time:", returnTime);
+
+      // Close the modal after confirming rental
+      this.showModal = false;
+    }
+  }
+};
+</script>
 
 <style>
  .btn-custom {

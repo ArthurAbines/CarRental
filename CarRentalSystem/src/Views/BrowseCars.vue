@@ -25,9 +25,9 @@
                 </li>
             </ul>
             <form class="d-flex ms-auto">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-success" type="submit">Search</button>
-            </form>
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-success" type="submit"><i class="fas fa-search"></i></button>
+</form>
         </div>
     </div>
 </nav>
@@ -42,7 +42,7 @@
     <div class="container-search">
       <!-- Search criteria -->
       <div class="search-container">
-        <div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
+        <div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -20px;">
     <h5 style="background-color: #4D5167; color: white; padding: 10px; margin: 0; border-top-left-radius: 5px; border-radius: 5px; border: 1px solid black">Category or set search criteria</h5>
   </div>
 
@@ -50,7 +50,7 @@
         <!-- Search criteria -->
 
 <!--Car manufactuer-->
-<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px; margin-right: 100px;">
+<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -20px; margin-right: 100px;">
   <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Car manufacturer</h5>
   <div class="checkbox-grid" style="border: 2px solid black; border-top: none; display: flex; background-color: #4D5167;border-bottom-left-radius: 5px; border-bottom-right-radius: 5px">
     <div class="checkbox-column" style="padding: 5px;">
@@ -70,7 +70,7 @@
 <!--Car manufactuer-->
 
 <!-- Body Type -->
-<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
+<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -20px;">
   <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Body type</h5>
   <div class="checkbox-grid" style="border: 2px solid black; border-top: none; display: grid; grid-template-columns: repeat(2, 1fr); background-color: #4D5167;border-bottom-left-radius: 5px; border-bottom-right-radius: 5px">
     <div v-for="(type, index) in bodyTypes.slice(0, 4)" :key="index" class="checkbox-item" style="padding: 5px; display: flex; align-items: center;">
@@ -92,7 +92,7 @@
 <!-- Body Type -->
 
 <!-- Price Range -->
-<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
+<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -20px;">
   <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Price range</h5>
   <div style="padding: 5px; border: 2px solid black; background-color: #4D5167;border-bottom-left-radius: 5px; border-bottom-right-radius: 5px">
     <select style="width: 100%; color: #000; background-color: #D9D9D9; border-radius: 5px;">
@@ -104,7 +104,7 @@
 <!-- Price Range -->
 
 <!-- Fuel Type -->
-<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
+<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -20px;">
   <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Fuel type</h5>
   <div class="checkbox-grid" style="border: 2px solid black; border-top: none; padding: 5px; display: flex; justify-content: center; background-color: #4D5167;border-bottom-left-radius: 5px; border-bottom-right-radius: 5px">
     <div v-for="(fuel, index) in fuelTypes" :key="index" class="checkbox-item" style="margin-right: 10px;">
@@ -116,7 +116,7 @@
 <!-- Fuel Type -->
 
 <!-- Transmission -->
-<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
+<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -20px;">
   <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Transmission</h5>
   <div class="checkbox-grid" style="border: 2px solid black; border-top: none; padding: 5px; display: flex; justify-content: center; background-color: #4D5167;border-bottom-left-radius: 5px; border-bottom-right-radius: 5px">
     <div v-for="(transmission, index) in transmissions" :key="index" class="checkbox-item" style="margin-right: 10px;">
@@ -128,7 +128,7 @@
 <!-- Transmission -->
 
 <!-- Seating Capacity -->
-<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
+<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -20px;">
   <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Seating capacity</h5>
   <div class="checkbox-grid" style="border: 2px solid black; border-top: none; padding: 5px; display: flex; flex-wrap: wrap; justify-content: center; background-color: #4D5167;border-bottom-left-radius: 5px; border-bottom-right-radius: 5px">
     <div v-for="(seat, index) in seatingCapacities" :key="index" class="checkbox-item" style="margin-right: 10px; margin-bottom: 10px;">
@@ -140,7 +140,7 @@
 <!-- Seating Capacity -->
 
 <!-- Features -->
-<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
+<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -20px;">
   <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Features</h5>
   <div class="checkbox-grid" style="border: 2px solid black; border-top: none; padding: 5px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; background-color: #4D5167;border-bottom-left-radius: 5px; border-bottom-right-radius: 5px">
     <div v-for="(feature, index) in features" :key="index" class="checkbox-item">
@@ -399,11 +399,7 @@
     color: #000;
 }
 
-.custom-navbar .btn-success {
-    background-color: #28a745;
-    border-color: #28a745;
-    color: #fff;
-}
+
 
 
 .container-search {
@@ -473,5 +469,7 @@
     background-color: #f5f5f5;
     transform: scale(1.03);
   }
+
+ 
 </style>
 

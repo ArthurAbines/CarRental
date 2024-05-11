@@ -25,9 +25,9 @@
           </li>
         </ul>
         <form class="d-flex ms-auto">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-success" type="submit">Search</button>
-        </form>
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-success" type="submit"><i class="fas fa-search"></i></button>
+</form>
       </div>
     </div>
   </nav>
@@ -37,7 +37,7 @@
   <div class="container mt-4">
     <div class="row align-items-center ">
      <div class="col">
-  <h1 class="text-center" style="color: #783D07; font-weight: bold;">BMX W7<img src="@/assets/BMW.svg.png" alt="Logo" width="50"></h1>
+  <h1 class="text-center" style="color: #000; font-weight: bold;">BMX W7<img src="@/assets/BMW.svg.png" alt="Logo" width="50"></h1>
   </div>
     </div>
   </div>
@@ -49,20 +49,47 @@
       <div class="col-lg-6">
 
  <!-- Card of the car -->
-<div class="card" style="width: 700px; height: 430px; margin-left: -80px; background-color: #F0F0F0; border-color: #D9D9D9;">
+ <div class="card card-hover" style="position: relative; width: 700px; height: 480px; margin-left: -80px; background-color: #F0F0F0; border-color: #D9D9D9;">
   <div class="card-body">
-    <img src="@/assets/bmwx7.png" alt="Car" style="max-width: 100%; max-height: 100%; ">
+    <img src="@/assets/bmwx7.png" alt="Car" style="max-width: 100%; max-height: 100%;">
     <div class="mt-3" style="color: black; position: absolute; bottom: 10px; left: 10px;">
       <p class="d-inline" style="margin-right: 10px;">Pricing: 3000/day</p> <!-- Aligned price to the left -->
     </div>
     <div class="mt-3" style="position: absolute; bottom: 10px; right: 10px;">
-      <button class="btn btn-custom"  style="background-color: #4D5167; color: white;">Rent Now</button> <!-- Moved button to the right -->
+      <button class="btn btn-custom float-end" style="background-color: #4D5167; color: white;" @click="showModal = true">Rent Now</button> <!-- Open modal on button click -->
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div v-if="showModal" class="modal fade show d-block" tabindex="-1" style="background: rgba(0, 0, 0, 0.5); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Select Rental Dates</h5>
+          <button type="button" class="btn-close" @click="showModal = false" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="startDate">Start Date:</label>
+            <input type="date" class="form-control" id="startDate">
+            <input type="time" class="form-control mt-2" id="startTime">
+          </div>
+          <div class="mb-3">
+            <label for="returnDate">Return Date:</label>
+            <input type="date" class="form-control" id="returnDate">
+            <input type="time" class="form-control mt-2" id="returnTime">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" @click="showModal = false">Close</button>
+          <button type="button" class="btn btn-primary" @click="confirmRental">Confirm Rental</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
 </div>
-
-
       <!--Overview -->
         <div class="col-lg-5 text-center mt-5">
         <h2 style="text-decoration: underline;">BMW X7 Overview</h2>
@@ -227,6 +254,38 @@
   </footer>
 </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      showModal: false
+    };
+  },
+  methods: {
+    confirmRental() {
+      const startDate = document.getElementById("startDate").value;
+      const startTime = document.getElementById("startTime").value;
+      const returnDate = document.getElementById("returnDate").value;
+      const returnTime = document.getElementById("returnTime").value;
+
+      // You can now use startDate, startTime, returnDate, and returnTime to process the rental confirmation
+      // For example:
+      console.log("Start Date:", startDate);
+      console.log("Start Time:", startTime);
+      console.log("Return Date:", returnDate);
+      console.log("Return Time:", returnTime);
+
+      // Close the modal after confirming rental
+      this.showModal = false;
+    }
+  }
+};
+</script>
+
+
+
+
 
 <style>
  .btn-custom {
