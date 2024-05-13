@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-//views
+//imports for client side
 import BrowseCars from '../Views/BrowseCars.vue'; // Adjust the import path
 import Homepage from '../Views/Homepage.vue';
 
-//route for specific car page
+//import for specific car page
 import NissanPatrol from '../ListofCars/NissanPatrol.vue';
 import BMWX7 from '../ListofCars/BMWX7.vue';
 import ChevroletSuburban from '../ListofCars/ChevroletSuburban.vue';
@@ -18,6 +18,10 @@ import MitsubishiMirageG4 from '../ListofCars/MitsubishiMirageG4.vue';
 import FordRanger from '../ListofCars/FordRanger.vue';
 import IsuzuDMax from '../ListofCars/IsuzuDMax.vue';
 import NissanNavara from '../ListofCars/NissanNavara.vue';
+
+//imports for admin pages
+import CarlistsView from '../Admin Views/CarlistsView.vue';
+
 
 
 const routes = [
@@ -107,6 +111,14 @@ const routes = [
   }, 
  
   
+//route for admin pages
+{
+  path: '/AdminCarlist',
+  name: 'AdminCarlist',
+  component: CarlistsView
+}, 
+
+
 
 ];
 

@@ -2,7 +2,7 @@
   <div>
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4D5167;">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #4D5167;">
       <div class="container">
         <a class="navbar-brand" href="#">
           <img :src="require('@/assets/rental logo.png')" alt="Logo" width="80" >
@@ -40,10 +40,11 @@
       <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
         <h2>Discover Your Perfect Ride at Affordable Prices</h2>
         <p>Explore our wide selection of featured vehicles and take advantage of our deals. Book now and hit the road!</p>
-        <router-link to="/browse" class="btn" style="background-color: #0D2B40; color: white;">Rent Now</router-link>
-      </div>
+        <router-link to="/browse">
+  <button class="btn btn-success" type="submit">Rent Now</button>
+</router-link>
     </div>
-
+  </div>
 
     <!--CARDS-->
     <div style="background-color: white; text-align: left; padding: 60px;">
@@ -61,7 +62,7 @@
           </a>
         </div>
         <div class="col-md-3">
-          <a href="/nissan-nv350-urvan" style="text-decoration: none;">
+          <a href="/FotonToano" style="text-decoration: none;">
             <div class="card h-100" style="width: 20rem;">
               <img src="@/assets/foton toano.png" class="card-img-top" alt="Car 2" style="height: 200px; object-fit: cover;">
               <div class="card-footer" style="background-color: #D9D9D9; position: relative;">
@@ -72,7 +73,7 @@
           </a>
         </div>
         <div class="col-md-3">
-          <a href="/mitsubishi-mirage-g4" style="text-decoration: none;">
+          <a href="/MitsubishiMirageG4" style="text-decoration: none;">
             <div class="card h-100" style="width: 20rem;">
               <img src="@/assets/mirage.png" class="card-img-top" alt="Car 3" style="height: 200px; object-fit: cover;">
               <div class="card-footer" style="background-color: #D9D9D9; position: relative;">
@@ -83,7 +84,7 @@
           </a>
         </div>
         <div class="col-md-3">
-          <a href="/chevrolet-suburban" style="text-decoration: none;">
+          <a href="/ChevroletSuburban" style="text-decoration: none;">
             <div class="card h-100" style="width: 20rem;">
               <img src="@/assets/chevrolet.png" class="card-img-top" alt="Car 4" style="height: 200px; object-fit: cover;">
               <div class="card-footer" style="background-color: #D9D9D9; position: relative;">
