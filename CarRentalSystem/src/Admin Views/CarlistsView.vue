@@ -17,15 +17,11 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#" style="color: white;">Client Profiles</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#" style="color: white;">Car Specifications</a>
-                </li>
+              
                 <li class="nav-item">
                   <a class="nav-link" href="#" style="color: white;">Approved Rentals</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#" style="color: white;">Reports</a>
-                </li>
+               
               </ul>
               <form class="d-flex ms-auto">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -42,14 +38,47 @@
     
     
     <!--SEARCH CATERGORY AREA-->
-        <div class="container-search">
-          <!-- Search criteria -->
-          <div class="search-container">
-            <div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
-       
-      </div>
-            <!-- Search criteria -->
-    
+    <div class="container-search">
+  <!-- Search criteria -->
+  <div class="search-container">
+    <!-- Search criteria -->
+
+    <!-- Dropdowns for Edit, Add, and Delete -->
+    <div class="search-group p-2 mb-3" style="width: 350px;">
+ <div class="d-flex justify-content-between align-items-center bg-custom p-4 mb-0 rounded-top">
+
+    <div class="dropdown" @click="toggleDropdown('edit')" style="cursor: pointer;">
+      <img src="@/assets/pen.png" alt="Edit" class="icon" style="cursor: pointer; width: 20px; height: 20px; object-fit: contain;">
+      <label for="dropdownMenuEdit" style="cursor: pointer; margin-left: 5px; color: white;">Edit</label>
+      <ul class="dropdown-menu" :class="{ show: isDropdownOpen.edit }" aria-labelledby="dropdownMenuEdit">
+        <li><a class="dropdown-item" href="#">Edit Option 1</a></li>
+        <li><a class="dropdown-item" href="#">Edit Option 2</a></li>
+        <li><a class="dropdown-item" href="#">Edit Option 3</a></li>
+      </ul>
+    </div>
+    <div class="dropdown" @click="toggleDropdown('add')" style="cursor: pointer;">
+      <img src="@/assets/transport.png" alt="Add" class="icon" style="cursor: pointer; width: 20px; height: 20px; object-fit: contain;">
+      <label for="dropdownMenuAdd" style="cursor: pointer; margin-left: 5px; color: white;">Add</label>
+      <ul class="dropdown-menu" :class="{ show: isDropdownOpen.add }" aria-labelledby="dropdownMenuAdd">
+        <li><a class="dropdown-item" href="#">Add Option 1</a></li>
+        <li><a class="dropdown-item" href="#">Add Option 2</a></li>
+        <li><a class="dropdown-item" href="#">Add Option 3</a></li>
+      </ul>
+    </div>
+    <div class="dropdown" @click="toggleDropdown('delete')" style="cursor: pointer;">
+      <img src="@/assets/delete.png" alt="Delete" class="icon" style="cursor: pointer; width: 20px; height: 20px; object-fit: contain;">
+      <label for="dropdownMenuDelete" style="cursor: pointer; margin-left: 5px; color: white;">Delete</label>
+      <ul class="dropdown-menu" :class="{ show: isDropdownOpen.delete }" aria-labelledby="dropdownMenuDelete">
+        <li><a class="dropdown-item" href="#">Delete Option 1</a></li>
+        <li><a class="dropdown-item" href="#">Delete Option 2</a></li>
+        <li><a class="dropdown-item" href="#">Delete Option 3</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    <!-- Dropdowns for Edit, Add, and Delete -->
+
     <!--Car manufactuer-->
     <div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px; margin-right: 100px;">
       <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Car manufacturer</h5>
@@ -69,7 +98,7 @@
       </div>
     </div>
     <!--Car manufactuer-->
-    
+
     <!-- Body Type -->
     <div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
       <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Body type</h5>
@@ -88,10 +117,10 @@
         </div>
       </div>
     </div>
-    
-    
+
+
     <!-- Body Type -->
-    
+
     <!-- Price Range -->
     <div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
       <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Price range</h5>
@@ -103,7 +132,7 @@
       </div>
     </div>
     <!-- Price Range -->
-    
+
     <!-- Fuel Type -->
     <div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
       <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Fuel type</h5>
@@ -115,7 +144,7 @@
       </div>
     </div>
     <!-- Fuel Type -->
-    
+
     <!-- Transmission -->
     <div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
       <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Transmission</h5>
@@ -127,7 +156,7 @@
       </div>
     </div>
     <!-- Transmission -->
-    
+
     <!-- Seating Capacity -->
     <div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
       <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Seating capacity</h5>
@@ -139,7 +168,7 @@
       </div>
     </div>
     <!-- Seating Capacity -->
-    
+
     <!-- Features -->
     <div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
       <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Features</h5>
@@ -150,50 +179,66 @@
         </div>
       </div>
     </div>
+ </div>
+    <!-- Search criteria -->
+
+
+    <!-- Dropdowns for Edit, Add, and Delete -->
+
+    <!-- Rest of the search criteria -->
+    <!-- ... -->
+
+
+
+            <!-- Search criteria -->
     
-    </div>
-    
-    
-    <!--features-->
+   
     
     <!--END of SEARCH CATERGORY AREA-->
     
     
-       <div>
-        <!-- Your search criteria content goes here -->
-        <div class="card-container-big" style="border: 1px solid grey; padding: 10px; margin-top: 10px; margin-right: -40px; margin-left: -90px; border-radius: 5px;">
-    <div class="search-criteria-container" style="border: 1px solid black; padding: 10px; margin-bottom: 30px; color: #fff;background-color: #4D5167;border-radius: 5px; display: flex; justify-content: flex-end; align-items: center;">
-        <div class="dropdown" style="margin-left: 20px; position: relative;">
-            <img src="@/assets/pen.png" alt="Edit" @click="toggleDropdown('update')" style="cursor: pointer; width: 20px; height: 20px;">
-            <label for="dropdownMenuUpdate" style="cursor: pointer; margin-left: 5px;">Edit</label>
-            <div class="dropdown-menu" :class="{ show: isDropdownOpen.update }" aria-labelledby="dropdownMenuUpdate">
-                <!-- Dropdown items for Edit -->
-                <a class="dropdown-item" href="#">Car Image</a>
-                <a class="dropdown-item" href="#">Car Logo</a>
-                <a class="dropdown-item" href="#">Car Name</a>
+    <div>
+    <!-- Your search criteria content goes here -->
+    <div class="card-container-big" style="border: 1px solid grey; padding: 10px; margin-top: 10px; margin-right: -40px; margin-left: -90px; border-radius: 5px;">
+        <div class="search-criteria-container" style="border: 1px solid black; padding: 10px; margin-bottom: 30px; color: #fff;background-color: #4D5167;border-radius: 5px; display: flex; justify-content: flex-end; align-items: center;">
+            <div class="dropdown" style="margin-left: 20px; position: relative;">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuUpdateNew" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="@/assets/pen.png" alt="Edit" style="width: 20px; height: 20px;">
+                    <span class="text-white" style="margin-left: 5px;">Edit</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuUpdateNew" :class="{ show: isDropdownOpen.updateNew }">
+                    <!-- Dropdown items for Edit -->
+                    <li><a class="dropdown-item" href="#">Car Image</a></li>
+                    <li><a class="dropdown-item" href="#">Car Logo</a></li>
+                    <li><a class="dropdown-item" href="#">Car Name</a></li>
+                </ul>
+            </div>
+            <div class="dropdown" style="margin-left: 20px; position: relative;">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuAddNew" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="@/assets/transport.png" alt="Add" style="width: 20px; height: 20px;">
+                    <span class="text-white" style="margin-left: 5px;">Add</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuAddNew" :class="{ show: isDropdownOpen.addNew }">
+                    <!-- Dropdown items for Add -->
+                    <li><a class="dropdown-item" href="#">Car Image</a></li>
+                    <li><a class="dropdown-item" href="#">Car Logo</a></li>
+                    <li><a class="dropdown-item" href="#">Car Name</a></li>
+                </ul>
+            </div>
+            <div class="dropdown" style="margin-left: 20px; position: relative;">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuDeleteNew" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="@/assets/delete.png" alt="Delete" style="width: 20px; height: 20px;">
+                    <span class="text-white" style="margin-left: 5px;">Delete</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuDeleteNew" :class="{ show: isDropdownOpen.deleteNew }">
+                    <!-- Dropdown items for Delete -->
+                    <li><a class="dropdown-item" href="#">Car Image</a></li>
+                    <li><a class="dropdown-item" href="#">Car Logo</a></li>
+                    <li><a class="dropdown-item" href="#">Car Name</a></li>
+                </ul>
             </div>
         </div>
-        <div class="dropdown" style="margin-left: 20px; position: relative;">
-            <img src="@/assets/transport.png" alt="Add" @click="toggleDropdown('add')" style="cursor: pointer; width: 20px; height: 20px;">
-            <label for="dropdownMenuAdd" style="cursor: pointer; margin-left: 5px;">Add</label>
-            <div class="dropdown-menu" :class="{ show: isDropdownOpen.add }" aria-labelledby="dropdownMenuAdd">
-                <!-- Dropdown items for Add -->
-                <a class="dropdown-item" href="#">Car Image</a>
-                <a class="dropdown-item" href="#">Car Logo</a>
-                <a class="dropdown-item" href="#">Car Name</a>
-            </div>
-        </div>
-        <div class="dropdown" style="margin-left: 20px; position: relative;">
-            <img src="@/assets/delete.png" alt="Delete" @click="toggleDropdown('delete')" style="cursor: pointer; width: 20px; height: 20px;">
-            <label for="dropdownMenuDelete" style="cursor: pointer; margin-left: 5px;">Delete</label>
-            <div class="dropdown-menu" :class="{ show: isDropdownOpen.delete }" aria-labelledby="dropdownMenuDelete">
-                <!-- Dropdown items for Delete -->
-                <a class="dropdown-item" href="#">Car Image</a>
-                <a class="dropdown-item" href="#">Car Logo</a>
-                <a class="dropdown-item" href="#">Car Name</a>
-            </div>
-        </div>
-    </div>
+  
 
 
           <div class="card-container" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 20px; ">
@@ -405,6 +450,10 @@ export default {
         background-color: #f5f5f5;
         transform: scale(1.03);
       }
+
+      .bg-custom {
+    background-color: #4D5167;
+}
     </style>
     
     
