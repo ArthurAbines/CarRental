@@ -1,36 +1,36 @@
 <template>
 
 <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #4D5167;">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img :src="require('@/assets/rental logo.png')" alt="Logo" width="80" >
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#" style="color: white;">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" style="color: white;">Rentals</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" style="color: white;">Booking</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" style="color: white;">Forum</a>
-            </li>
-          </ul>
-          <form class="d-flex ms-auto">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-success" type="submit"><i class="fas fa-search"></i></button>
-</form>
-        </div>
-      </div>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #4D5167; padding:.5rem 0;">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#" style="color: #fff; font-weight: bold; margin-left: -100px;">
+      <img src="@/assets/rental logo.png" alt="Logo" width="80" >
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style = "margin-left: -10px;">
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link" href="#">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link" href="#">Rentals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link" href="#">Booking</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link" href="#">Forum</a>
+        </li>
+      </ul>
+      <form class="d-flex" style="max-width: 250px; margin-right: -90px; ">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="border-radius: 0.25rem; ">
+        <button class="btn btn-success" type="submit" style="border-radius: 0.25rem;"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+  </div>
+</nav>
 
 
 
@@ -42,17 +42,17 @@
     <div class="container-search">
       <!-- Search criteria -->
       <div class="search-container">
-        <div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
-    <h5 style="background-color: #4D5167; color: white; padding: 10px; margin: 0; border-top-left-radius: 5px; border-radius: 5px; border: 1px solid black">Category or set search criteria</h5>
+        <div class="search-group" style="padding: 10px;  width: 350px; margin-bottom: -20px;">
+    <h5 style="background-color: #4D5167; color: white; padding: 10px; margin: 0;  border: 1px solid black">Category or set search criteria</h5>
   </div>
 
 
         <!-- Search criteria -->
 
 <!--Car manufactuer-->
-<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px; margin-right: 100px;">
-  <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Car manufacturer</h5>
-  <div class="checkbox-grid" style="border: 2px solid black; border-top: none; display: flex; background-color: #4D5167;border-bottom-left-radius: 5px; border-bottom-right-radius: 5px">
+<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -20px; margin-right: 100px;">
+  <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0;  border: 1px solid black;">Car manufacturer</h5>
+  <div class="checkbox-grid" style="border: 2px solid black; border-top: none; display: flex; background-color: #4D5167;">
     <div class="checkbox-column" style="padding: 5px;">
       <div v-for="(manufacturer, index) in carManufacturers.slice(0, 5)" :key="index" class="checkbox-item">
         <input type="checkbox" :value="manufacturer" :id="'manufacturer_' + index">
@@ -70,9 +70,9 @@
 <!--Car manufactuer-->
 
 <!-- Body Type -->
-<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
-  <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Body type</h5>
-  <div class="checkbox-grid" style="border: 2px solid black; border-top: none; display: grid; grid-template-columns: repeat(2, 1fr); background-color: #4D5167;border-bottom-left-radius: 5px; border-bottom-right-radius: 5px">
+<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -20px;">
+  <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; ; border: 1px solid black;">Body type</h5>
+  <div class="checkbox-grid" style="border: 2px solid black; border-top: none; display: grid; grid-template-columns: repeat(2, 1fr); background-color: #4D5167;">
     <div v-for="(type, index) in bodyTypes.slice(0, 4)" :key="index" class="checkbox-item" style="padding: 5px; display: flex; align-items: center;">
       <input type="checkbox" :value="type" :id="'bodytype_' + index" style="margin-right: 5px;">
       <label :for="'bodytype_' + index" style="color: #fff; margin-right: 10px;">{{ type }}</label>
@@ -92,9 +92,9 @@
 <!-- Body Type -->
 
 <!-- Price Range -->
-<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
-  <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Price range</h5>
-  <div style="padding: 5px; border: 2px solid black; background-color: #4D5167;border-bottom-left-radius: 5px; border-bottom-right-radius: 5px">
+<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -20px;">
+  <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; ; border: 1px solid black;">Price range</h5>
+  <div style="padding: 5px; border: 2px solid black; background-color: #4D5167;">
     <select style="width: 100%; color: #000; background-color: #D9D9D9; border-radius: 5px;">
       <option value="custom" >Custom</option>
       <!-- Add other options here -->
@@ -104,9 +104,9 @@
 <!-- Price Range -->
 
 <!-- Fuel Type -->
-<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
-  <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Fuel type</h5>
-  <div class="checkbox-grid" style="border: 2px solid black; border-top: none; padding: 5px; display: flex; justify-content: center; background-color: #4D5167;border-bottom-left-radius: 5px; border-bottom-right-radius: 5px">
+<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -20px;">
+  <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; ; border: 1px solid black;">Fuel type</h5>
+  <div class="checkbox-grid" style="border: 2px solid black; border-top: none; padding: 5px; display: flex; justify-content: center; background-color: #4D5167;">
     <div v-for="(fuel, index) in fuelTypes" :key="index" class="checkbox-item" style="margin-right: 10px;">
       <input type="checkbox" :value="fuel" :id="'fuel_' + index" style="margin-right: 5px;">
       <label :for="'fuel_' + index" style="color: #fff;">{{ fuel }}</label>
@@ -116,9 +116,9 @@
 <!-- Fuel Type -->
 
 <!-- Transmission -->
-<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
-  <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Transmission</h5>
-  <div class="checkbox-grid" style="border: 2px solid black; border-top: none; padding: 5px; display: flex; justify-content: center; background-color: #4D5167;border-bottom-left-radius: 5px; border-bottom-right-radius: 5px">
+<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -20px;">
+  <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; ; border: 1px solid black;">Transmission</h5>
+  <div class="checkbox-grid" style="border: 2px solid black; border-top: none; padding: 5px; display: flex; justify-content: center; background-color: #4D5167;">
     <div v-for="(transmission, index) in transmissions" :key="index" class="checkbox-item" style="margin-right: 10px;">
       <input type="checkbox" :value="transmission" :id="'transmission_' + index" style="margin-right: 5px;">
       <label :for="'transmission_' + index" style="color: #fff;">{{ transmission }}</label>
@@ -128,9 +128,9 @@
 <!-- Transmission -->
 
 <!-- Seating Capacity -->
-<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
-  <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Seating capacity</h5>
-  <div class="checkbox-grid" style="border: 2px solid black; border-top: none; padding: 5px; display: flex; flex-wrap: wrap; justify-content: center; background-color: #4D5167;border-bottom-left-radius: 5px; border-bottom-right-radius: 5px">
+<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -20px;">
+  <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; ; border: 1px solid black;">Seating capacity</h5>
+  <div class="checkbox-grid" style="border: 2px solid black; border-top: none; padding: 5px; display: flex; flex-wrap: wrap; justify-content: center; background-color: #4D5167;">
     <div v-for="(seat, index) in seatingCapacities" :key="index" class="checkbox-item" style="margin-right: 10px; margin-bottom: 10px;">
       <input type="checkbox" :value="seat" :id="'seat_' + index" style="margin-right: 5px;">
       <label :for="'seat_' + index" style="color: #fff;">{{ seat }}</label>
@@ -140,9 +140,9 @@
 <!-- Seating Capacity -->
 
 <!-- Features -->
-<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -10px;">
-  <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid black;">Features</h5>
-  <div class="checkbox-grid" style="border: 2px solid black; border-top: none; padding: 5px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; background-color: #4D5167;border-bottom-left-radius: 5px; border-bottom-right-radius: 5px">
+<div class="search-group" style="padding: 10px; border-radius: 5px; width: 350px; margin-bottom: -20px;">
+  <h5 style="background-color: #D9D9D9; color: #000; padding: 10px; margin: 0; border-top-left-radius: 5px; ; border: 1px solid black;">Features</h5>
+  <div class="checkbox-grid" style="border: 2px solid black; border-top: none; padding: 5px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; background-color: #4D5167;">
     <div v-for="(feature, index) in features" :key="index" class="checkbox-item">
       <input type="checkbox" :value="feature" :id="'feature_' + index" style="margin-right: 5px;">
       <label :for="'feature_' + index" style="color: #fff;">{{ feature }}</label>
@@ -379,5 +379,23 @@
     background-color: #f5f5f5;
     transform: scale(1.03);
   }
+  .custom-nav-link {
+    font-weight: bold;
+    color: white;
+   
+    border: 1px solid white;
+    border-radius: 7px;
+    transition: background-color 0.3s, color 0.3s;
+    padding:5px;
+    margin-left: 5px;
+    width: 90px;
+    text-align: center;
+}
+
+  .custom-nav-link:hover {
+    background-color: white;
+    color: #4D5167;
+  }
+
 </style>
 

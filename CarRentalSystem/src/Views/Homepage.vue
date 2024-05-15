@@ -2,44 +2,43 @@
   <div>
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #4D5167;">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img :src="require('@/assets/rental logo.png')" alt="Logo" width="80" >
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#" style="color: white;">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" style="color: white;">Rentals</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" style="color: white;">Booking</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" style="color: white;">Forum</a>
-            </li>
-          </ul>
-          <form class="d-flex ms-auto">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-success" type="submit"><i class="fas fa-search"></i></button>
-</form>
-        </div>
-      </div>
-    </nav>
-
-
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #4D5167; padding:.5rem 0;">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#" style="color: #fff; font-weight: bold; margin-left: -100px;">
+      <img src="@/assets/rental logo.png" alt="Logo" width="80" >
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style = "margin-left: -10px;">
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link" href="#">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link" href="#">Rentals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link" href="#">Booking</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link" href="#">Forum</a>
+        </li>
+      </ul>
+      <form class="d-flex" style="max-width: 250px; margin-right: -90px; ">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="border-radius: 0.25rem; ">
+        <button class="btn btn-success" type="submit" style="border-radius: 0.25rem;"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+  </div>
+</nav>
     <!-- Adjusted button color -->
     <div style="position: relative;">
-      <img src="@/assets/pg.webp" alt="Image below navbar" style="width: 100%; height: 900px; ">
+      <img src="@/assets/22.jpg" alt="Image below navbar" style="width: 100%; height: 900px; ">
       <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
-        <h2>Discover Your Perfect Ride at Affordable Prices</h2>
-        <p>Explore our wide selection of featured vehicles and take advantage of our deals. Book now and hit the road!</p>
+        <h2 style="text-shadow: 3px 3px 6px rgba(0, 0, 0, 4);">Discover Your Perfect Ride at Affordable Prices</h2>
+<p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 4);">Explore our wide selection of featured vehicles and take advantage of our deals. Book now and hit the road!</p>
+
         <router-link to="/browse">
   <button class="btn btn-success" type="submit">Rent Now</button>
 </router-link>
@@ -289,5 +288,25 @@ export default {
 .col-md-3.text-center:hover {
   transform: scale(1.1); /* Scale the icon container on hover */
 }
+
+
+
+.custom-nav-link {
+    font-weight: bold;
+    color: white;
+   
+    border: 1px solid white;
+    border-radius: 7px;
+    transition: background-color 0.3s, color 0.3s;
+    padding:5px;
+    margin-left: 5px;
+    width: 90px;
+    text-align: center;
+}
+
+  .custom-nav-link:hover {
+    background-color: white;
+    color: #4D5167;
+  }
 
 </style>
